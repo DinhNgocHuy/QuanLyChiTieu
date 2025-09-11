@@ -1,0 +1,58 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+
+/android
+/ios
+
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env*.local
+.env
+.env.production
+.env.staging
+
+# Service account keys
+service-account-key.json
+google-services.json
+GoogleService-Info.plist
+
+# Build artifacts
+*.apk
+*.aab
+*.ipa
+
+# typescript
+*.tsbuildinfo
+
+app-example
