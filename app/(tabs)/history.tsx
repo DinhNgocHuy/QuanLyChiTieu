@@ -84,7 +84,7 @@ export default function HistoryScreen() {
     };
 
     if (sortBy === "price") {
-      sorted.sort((a, b) => b.price - a.price);
+      sorted.sort((a, b) => Number(b.price) - Number(a.price));
     } else {
       sorted.sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
     }
@@ -161,7 +161,7 @@ export default function HistoryScreen() {
   const getPieChartData = () => {
     const categoryTotals: { [key: string]: number } = {};
     expenses.forEach(expense => {
-      categoryTotals[expense.tag] = (categoryTotals[expense.tag] || 0) + expense.price;
+      categoryTotals[expense.tag] = (categoryTotals[expense.tag] || 0) + Number(expense.price);
     });
 
     const chartColors = ['#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#f97316', '#84cc16'];
@@ -174,7 +174,7 @@ export default function HistoryScreen() {
     }));
   };
 
-  const totalAmount = expenses.reduce((sum, expense) => sum + expense.price, 0);
+  const totalAmount = expenses.reduce((sum, expense) => sum + Number(expense.price), 0);
 
   const months = [
     'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
@@ -464,7 +464,7 @@ export default function HistoryScreen() {
                             </Text>
                           </View>
                           <Text style={[styles.expenseAmount, { color: colors.text }]}>
-                            {formatCurrency(item.price)}Đ
+                            {formatCurrency(Number(item.price))}Đ
                           </Text>
                         </View>
                         {item.description && (
@@ -520,7 +520,7 @@ export default function HistoryScreen() {
                     Số tiền
                   </Text>
                   <Text style={[styles.detailValue, { color: colors.text, fontSize: 24, fontWeight: 'bold' }]}>
-                    {formatCurrency(selectedExpense.price)}Đ
+                    {formatCurrency(Number(selectedExpense.price))}Đ
                   </Text>
                 </View>
 

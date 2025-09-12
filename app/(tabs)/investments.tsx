@@ -31,25 +31,25 @@ const screenWidth = Dimensions.get('window').width;
 
 const investmentTypes = [
   // Income Types
-  { label: '💰 Lương', value: 'salary', category: 'income' },
-  { label: '🎯 Thưởng', value: 'bonus', category: 'income' },
-  { label: '💼 Nhiệm vụ', value: 'commission', category: 'income' },
-  { label: '🖥️ Freelance', value: 'freelance', category: 'income' },
-  { label: '💳 Cổ tức', value: 'dividend', category: 'income' },
-  { label: '🏦 Lãi ngân hàng', value: 'interest', category: 'income' },
-  { label: '🏠 Thu nhập cho thuê', value: 'rental', category: 'income' },
+  { label: '💰 Lương', value: 'salary', category: 'thu nhập' },
+  { label: '🎯 Thưởng', value: 'bonus', category: 'thu nhập' },
+  { label: '💼 Nhiệm vụ', value: 'commission', category: 'thu nhập' },
+  { label: '🖥️ Freelance', value: 'freelance', category: 'thu nhập' },
+  { label: '💳 Cổ tức', value: 'dividend', category: 'thu nhập' },
+  { label: '🏦 Lãi ngân hàng', value: 'interest', category: 'thu nhập' },
+  { label: '🏠 Thu nhập cho thuê', value: 'rental', category: 'thu nhập' },
 
   // Investment Types
-  { label: '📈 Quỹ tương hỗ', value: 'mutual_fund', category: 'investment' },
-  { label: '📊 Cổ phiếu', value: 'stocks', category: 'investment' },
-  { label: '🏛️ Trái phiếu', value: 'bonds', category: 'investment' },
-  { label: '�️ Bất động sản', value: 'real_estate', category: 'investment' },
-  { label: '₿ Tiền điện tử', value: 'crypto', category: 'investment' },
+  { label: '📈 Quỹ tương hỗ', value: 'mutual_fund', category: 'đầu tư' },
+  { label: '📊 Cổ phiếu', value: 'stocks', category: 'đầu tư' },
+  { label: '🏛️ Trái phiếu', value: 'bonds', category: 'đầu tư' },
+  { label: '�️ Bất động sản', value: 'real_estate', category: 'đầu tư' },
+  { label: '₿ Tiền điện tử', value: 'crypto', category: 'đầu tư' },
 
   // Savings Types
-  { label: '🏦 Tiền gửi cố định', value: 'fixed_deposit', category: 'savings' },
-  { label: '🛡️ Bảo hiểm', value: 'insurance', category: 'savings' },
-  { label: '💼 Khác', value: 'other', category: 'income' },
+  { label: '🏦 Tiền gửi cố định', value: 'fixed_deposit', category: 'tiết kiệm' },
+  { label: '🛡️ Bảo hiểm', value: 'insurance', category: 'tiết kiệm' },
+  { label: '💼 Khác', value: 'other', category: 'thu nhập' },
 ];
 
 const frequencyOptions = [

@@ -1,19 +1,21 @@
-import { initializeApp } from 'firebase/app';
+import { getApps, initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDoF0ArE5t7INoIp4crN37BqUR4Dq8eq9c",
-  authDomain: "expense-manage-project-5e615.firebaseapp.com",
-  projectId: "expense-manage-project-5e615",
-  storageBucket: "expense-manage-project-5e615.firebasestorage.app",
-  messagingSenderId: "1012932391363",
-  appId: "1:1012932391363:web:01c98235a66fa948834d76"
+  apiKey: "AIzaSyBTDgV4wtG6t0ncPVI18_NQdDQxqklbd6s",
+  authDomain: "quanlychitieu-a7053.firebaseapp.com",
+  projectId: "quanlychitieu-a7053",
+  storageBucket: "quanlychitieu-a7053.firebasestorage.app",
+  messagingSenderId: "239624035516",
+  appId: "1:239624035516:web:bf80a64b1b1d1ee7fe84b9",
+  measurementId: "G-L6LVTTTPJM"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);

@@ -90,19 +90,19 @@ export default function AddScreen() {
     // Validate price is a valid number
     const numericPrice = parseFloat(price.replace(/[^0-9.]/g, ''));
     if (isNaN(numericPrice) || numericPrice <= 0) {
-      setFeedback({ type: 'error', message: 'Please enter a valid positive amount.' });
+      setFeedback({ type: 'error', message: 'Vui lòng nhập số tiền hợp lệ.' });
       return;
     }
 
     // Validate price is not too large
-    if (numericPrice > 10000000) {
-      setFeedback({ type: 'error', message: 'Please enter a valid positive amount.' });
+    if (numericPrice > 1000000000) {
+      setFeedback({ type: 'error', message: 'Số tiền không được vượt quá 1 tỷ.' });
       return;
     }
 
     // Validate description length
     if (description.length > 500) {
-      setFeedback({ type: 'error', message: 'Description cannot exceed 500 characters.' });
+      setFeedback({ type: 'error', message: 'Mô tả không được vượt quá 500 ký tự.' });
       return;
     }
 
