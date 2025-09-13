@@ -265,7 +265,7 @@ export default function GoalsScreen() {
             borderColor: colors.border, 
             borderWidth: 1 
           }]}>
-            <Text style={[styles.pickerLabel, { color: colors.textSecondary }]}>Month</Text>
+            <Text style={[styles.pickerLabel, { color: colors.textSecondary }]}>Tháng</Text>
             <Picker
               selectedValue={selectedMonth}
               style={[styles.picker, { 
@@ -291,7 +291,7 @@ export default function GoalsScreen() {
             borderColor: colors.border, 
             borderWidth: 1 
           }]}>
-            <Text style={[styles.pickerLabel, { color: colors.textSecondary }]}>Year</Text>
+            <Text style={[styles.pickerLabel, { color: colors.textSecondary }]}>Năm</Text>
             <Picker
               selectedValue={selectedYear}
               style={[styles.picker, { 
@@ -459,7 +459,8 @@ export default function GoalsScreen() {
                     
                     {item.createdAt && (
                       <Text style={[styles.goalDate, { color: colors.placeholder }]}>
-                        Added {new Date(item.createdAt).toLocaleDateString('en-US', {
+                        Đã tạo vào {new Date(item.createdAt).toLocaleDateString('vi-VN', {
+                          year: 'numeric',
                           month: 'short',
                           day: 'numeric',
                           hour: '2-digit',

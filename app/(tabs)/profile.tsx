@@ -627,7 +627,7 @@ export default function ProfileScreen() {
             <Card>
               <View style={styles.exportButtons}>
                 <Button
-                  title="Export to Excel"
+                  title="Xuất báo cáo Excel"
                   onPress={exportToCSV}
                   icon="document-text"
                   loading={exportingCSV}
@@ -638,21 +638,21 @@ export default function ProfileScreen() {
                 
                 <Separator height={12} />
                 
-                <Button
-                  title="Export Report"
+                {/* <Button
+                  title="Xuất báo cáo PDF"
                   onPress={exportToPDF}
                   icon="newspaper"
                   loading={exportingPDF}
                   disabled={exportingPDF}
                   variant="primary"
                   style={styles.exportButton}
-                />
+                /> */}
               </View>
             </Card>
           </Section>
 
           {/* App Info */}
-          <Section title="ℹ️ About">
+          <Section title="ℹ️ Thông tin ứng dụng" >
             <Card>
               <View style={styles.appInfo}>
                 <Text style={[styles.appTitle, { color: colors.primary }]}>

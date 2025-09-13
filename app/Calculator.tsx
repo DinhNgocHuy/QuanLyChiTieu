@@ -113,7 +113,7 @@ const Calculator: React.FC = () => {
           const timePeriod = parseFloat(years);
 
           if (isNaN(principal) || isNaN(annualRate) || isNaN(timePeriod)) {
-            Alert.alert('Invalid Input', 'Please enter valid numbers for all fields.');
+            Alert.alert('Lỗi đầu vào', 'Vui lòng nhập tất cả các trường bắt buộc với giá trị hợp lệ.');
             return;
           }
 
@@ -126,7 +126,7 @@ const Calculator: React.FC = () => {
           const sipYears = parseFloat(years);
 
           if (isNaN(monthly) || isNaN(sipRate) || isNaN(sipYears)) {
-            Alert.alert('Invalid Input', 'Please enter valid numbers for all fields.');
+            Alert.alert('Lỗi đầu vào', 'Vui lòng nhập tất cả các trường bắt buộc với giá trị hợp lệ.');
             return;
           }
 
@@ -139,7 +139,7 @@ const Calculator: React.FC = () => {
           const fdYears = parseFloat(years);
 
           if (isNaN(fdAmount) || isNaN(fdRate) || isNaN(fdYears)) {
-            Alert.alert('Invalid Input', 'Please enter valid numbers for all fields.');
+            Alert.alert('Lỗi đầu vào', 'Vui lòng nhập tất cả các trường bắt buộc với giá trị hợp lệ.');
             return;
           }
 
@@ -151,7 +151,7 @@ const Calculator: React.FC = () => {
           const ppfYears = parseFloat(years) || 15;
 
           if (isNaN(ppfMonthly)) {
-            Alert.alert('Invalid Input', 'Please enter valid monthly investment amount.');
+            Alert.alert('Lỗi đầu vào', 'Vui lòng nhập số tiền đầu tư hàng tháng hợp lệ.');
             return;
           }
 
@@ -164,7 +164,7 @@ const Calculator: React.FC = () => {
           const goalYears = parseFloat(years);
 
           if (isNaN(targetAmount) || isNaN(goalRate) || isNaN(goalYears)) {
-            Alert.alert('Invalid Input', 'Please enter valid numbers for all fields.');
+            Alert.alert('Lỗi đầu vào', 'Vui lòng nhập tất cả các trường bắt buộc với giá trị hợp lệ.');
             return;
           }
 
@@ -177,7 +177,7 @@ const Calculator: React.FC = () => {
           const loanYears = parseFloat(years);
 
           if (isNaN(loanAmount) || isNaN(loanRate) || isNaN(loanYears)) {
-            Alert.alert('Invalid Input', 'Please enter valid numbers for all fields.');
+            Alert.alert('Lỗi đầu vào', 'Vui lòng nhập tất cả các trường bắt buộc với giá trị hợp lệ.');
             return;
           }
 
@@ -185,13 +185,13 @@ const Calculator: React.FC = () => {
           break;
 
         default:
-          Alert.alert('Error', 'Please select an investment type.');
+          Alert.alert('Lỗi', 'Vui lòng chọn một loại hình đầu tư.');
           return;
       }
 
       setResults(calculationResults);
     } catch (error) {
-      Alert.alert('Error', 'Calculation failed. Please check your inputs and try again.');
+      Alert.alert('Lỗi', 'Tính toán không thành công. Vui lòng kiểm tra đầu vào và thử lại.');
     }
   };
 
@@ -707,7 +707,7 @@ const Calculator: React.FC = () => {
               >
                 <Ionicons name="refresh" size={18} color={colors.textSecondary} />
                 <Text style={[styles.resetButtonText, { color: colors.textSecondary }]}>
-                  Reset
+                  Làm mới
                 </Text>
               </Pressable>
             </View>
@@ -737,28 +737,28 @@ const Calculator: React.FC = () => {
                   <>
                     <View style={styles.resultRow}>
                       <Text style={[styles.resultLabel, { color: colors.textSecondary }]}>
-                        Target Amount
+                        Mục tiêu tài chính
                       </Text>
                       <Text style={[styles.resultValue, { color: colors.text }]}>
                         {formatCurrency(parseFloat(goalAmount) || 0)}
                       </Text>
                     </View>
 
-                    <View style={[styles.resultRow, styles.highlightRow, { backgroundColor: selectedType?.bgColor }]}>
-                      <Text style={[styles.resultLabel, { color: selectedType?.color }]}>
-                        Required Monthly SIP
-                      </Text>
-                      <Text style={[styles.resultValue, styles.highlightValue, { color: selectedType?.color }]}>
-                        {formatCurrency(results.monthlyAmount || 0)}
-                      </Text>
-                    </View>
-
                     <View style={styles.resultRow}>
                       <Text style={[styles.resultLabel, { color: colors.textSecondary }]}>
-                        Total Investment
+                        Tổng số tiền đầu tư
                       </Text>
                       <Text style={[styles.resultValue, { color: colors.text }]}>
                         {formatCurrency(results.totalInvestment)}
+                      </Text>
+                    </View>
+
+                    <View style={[styles.resultRow, styles.highlightRow, { backgroundColor: selectedType?.bgColor }]}>
+                      <Text style={[styles.resultLabel, { color: selectedType?.color }]}>
+                        Số tiền đầu tư hàng tháng
+                      </Text>
+                      <Text style={[styles.resultValue, styles.highlightValue, { color: selectedType?.color }]}>
+                        {formatCurrency(results.monthlyAmount || 0)}
                       </Text>
                     </View>
                   </>
@@ -766,25 +766,18 @@ const Calculator: React.FC = () => {
                   <>
                     <View style={styles.resultRow}>
                       <Text style={[styles.resultLabel, { color: colors.textSecondary }]}>
-                        Loan Amount
+                        Số tiền vay
                       </Text>
                       <Text style={[styles.resultValue, { color: colors.text }]}>
                         {formatCurrency(results.totalInvestment)}
                       </Text>
                     </View>
 
-                    <View style={[styles.resultRow, styles.highlightRow, { backgroundColor: selectedType?.bgColor }]}>
-                      <Text style={[styles.resultLabel, { color: selectedType?.color }]}>
-                        Monthly EMI
-                      </Text>
-                      <Text style={[styles.resultValue, styles.highlightValue, { color: selectedType?.color }]}>
-                        {formatCurrency(results.monthlyAmount || 0)}
-                      </Text>
-                    </View>
+                    
 
                     <View style={styles.resultRow}>
                       <Text style={[styles.resultLabel, { color: colors.textSecondary }]}>
-                        Total Payment
+                        Tổng số tiền thanh toán
                       </Text>
                       <Text style={[styles.resultValue, { color: colors.text }]}>
                         {formatCurrency(results.futureValue)}
@@ -793,10 +786,18 @@ const Calculator: React.FC = () => {
 
                     <View style={styles.resultRow}>
                       <Text style={[styles.resultLabel, { color: colors.textSecondary }]}>
-                        Total Interest
+                        Lãi suất
                       </Text>
                       <Text style={[styles.resultValue, { color: selectedType?.color }]}>
                         {formatCurrency(results.totalInterest)}
+                      </Text>
+                    </View>
+                    <View style={[styles.resultRow, styles.highlightRow, { backgroundColor: selectedType?.bgColor }]}>
+                      <Text style={[styles.resultLabel, { color: selectedType?.color }]}>
+                        Phải trả hàng tháng
+                      </Text>
+                      <Text style={[styles.resultValue, styles.highlightValue, { color: selectedType?.color }]}>
+                        {formatCurrency(results.monthlyAmount || 0)}
                       </Text>
                     </View>
                   </>
@@ -804,7 +805,7 @@ const Calculator: React.FC = () => {
                   <>
                     <View style={styles.resultRow}>
                       <Text style={[styles.resultLabel, { color: colors.textSecondary }]}>
-                        {investmentType === 'lumpsum' || investmentType === 'fd' ? 'Đầu tư ban đầu' : 'Total Investment'}
+                        {investmentType === 'lumpsum' || investmentType === 'fd' ? 'Đầu tư ban đầu' : 'Tổng đầu tư'}
                       </Text>
                       <Text style={[styles.resultValue, { color: colors.text }]}>
                         {formatCurrency(results.totalInvestment)}
@@ -822,7 +823,7 @@ const Calculator: React.FC = () => {
 
                     <View style={[styles.resultRow, styles.highlightRow, { backgroundColor: selectedType?.bgColor }]}>
                       <Text style={[styles.resultLabel, { color: selectedType?.color }]}>
-                        {investmentType === 'lumpsum' || investmentType === 'fd' ? 'Số tiền đáo hạn' : 'Final Amount'}
+                        {investmentType === 'lumpsum' || investmentType === 'fd' ? 'Số tiền đáo hạn' : 'Số tiền đáo hạn'}
                       </Text>
                       <Text style={[styles.resultValue, styles.highlightValue, { color: selectedType?.color }]}>
                         {formatCurrency(results.futureValue)}
@@ -831,7 +832,7 @@ const Calculator: React.FC = () => {
 
                     <View style={styles.growthBadge}>
                       <Text style={[styles.growthText, { color: selectedType?.color }]}>
-                        {((results.futureValue / results.totalInvestment - 1) * 100).toFixed(1)}% Growth
+                        Tăng {((results.futureValue / results.totalInvestment - 1) * 100).toFixed(1)}%
                       </Text>
                     </View>
                   </>
